@@ -201,8 +201,8 @@ list_snake_case(NameString) ->
     Snaked2 = string:replace(Snaked1, "__", "_", all),
     string:to_lower(unicode:characters_to_list(Snaked2)).
 
-needs_update(Source, Artifact) ->
-    filelib:last_modified(Source) >= filelib:last_modified(Artifact).
+needs_update(_Source, _Artifact) ->
+    true.
 
 log_warnings(Warnings) ->
     [begin
